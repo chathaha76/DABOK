@@ -50,7 +50,7 @@ def get_current_price(ticker):
 upbit = pyupbit.Upbit(access, secret)
 print("autotrade start")
 # 시작 메세지 슬랙 전송
-post_message(myToken,"#coin-alarm", "autotrade start")
+post_message(myToken,"#coin-bot", "autotrade start")
 
 while True:
     try:
@@ -66,14 +66,14 @@ while True:
                 krw = get_balance("KRW")
                 if krw > 5000:
                     buy_result = upbit.buy_market_order("KRW-DOGE", krw*0.9995)
-                    post_message(myToken,"#coin-alarm", "DOGE buy : " +str(buy_result))
+                    post_message(myToken,"#coin-bot", "DOGE buy : " +str(buy_result))
         else:
             doge = get_balance("DOGE")
             if doge > (5000/get_current_price("KRW-DOGE")):
                 sell_result = upbit.sell_market_order("KRW-DOGE", doge*0.9995)
-                post_message(myToken,"#coin-alarm", "DOGE buy : " +str(sell_result))
+                post_message(myToken,"#coin-bot", "DOGE buy : " +str(sell_result))
         time.sleep(1)
     except Exception as e:
         print(e)
-        post_message(myToken,"#coin-alarm", e)
+        post_message(myToken,"#coin-bot", e)
         time.sleep(1)
