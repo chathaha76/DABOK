@@ -7,6 +7,6 @@ def post_message(token, channel, text):
     )
     print(response)
  
-myToken = "xoxb-1995460195813-2022344747728-JkIJDI9QkkrNeJ02C91HhGIs"
+myToken = ""
  
 post_message(myToken,"#coin-alarm","hi! i'm DABOK")
