@@ -9,4 +9,4 @@ def post_message(token, channel, text):
  
 myToken = ""
  
-post_message(myToken,"#coin-alarm","hi! i'm DABOK")
+post_message(myToken,"#coin-bot","hi! i'm DABOK")
